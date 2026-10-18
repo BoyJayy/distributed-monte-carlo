@@ -1,1 +1,2 @@
+курсовая
 https://www.cs.cornell.edu/courses/cs5625/2022sp/notes/monte-carlo.html
