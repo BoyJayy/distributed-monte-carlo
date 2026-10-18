@@ -1,0 +1,70 @@
+# Local coursework references, personal instructions and document previews
+/info/
+
+# macOS metadata
+.DS_Store
+._*
+
+# CMake build directories and generated files
+/build*/
+/cmake-build-*/
+/out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+Testing/
+
+# Compiled binaries, libraries and profiling output
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.dSYM/
+*.gcda
+*.gcno
+*.gcov
+*.profraw
+*.profdata
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Editor settings and temporary files
+.idea/
+.vscode/
+.cache/
+.clangd/
+*.swp
+*.swo
+*~
+
+# Local configuration and secrets; keep configuration examples versioned
+.env
+.env.*
+!.env.example
+!.env.*.example
+.secrets/
+secrets/
+
+# Local runtime data (not source code or benchmark reports)
+/.local/
+/data/
+/volumes/
+/logs/
+*.log
