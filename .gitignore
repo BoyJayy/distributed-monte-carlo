@@ -69,3 +69,6 @@ secrets/
 /volumes/
 /logs/
 *.log
+
+# Isolated completed coursework experiment
+/exp/
