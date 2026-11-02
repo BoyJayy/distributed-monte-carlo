@@ -28,6 +28,9 @@ int main(int argc, char** argv) {
         if (N < 1 || N > 1000000000) {
             throw std::out_of_range("Number of samples must be between 1 and 1,000,000,000");
         }
+        if (seed < 0 || seed > 1000000000) {
+            throw std::out_of_range("Seed must be between 0 and 1,000,000,000");
+        }
     } catch (const std::invalid_argument& e) {
         std::cerr << "Invalid argument: " << e.what() << std::endl;
         return 1;
