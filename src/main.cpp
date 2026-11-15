@@ -55,6 +55,18 @@ int main(int argc, char** argv) {
     // просчет дает 8/3 с ним мы сравниваем наш результат
     const ld exact = 8.0 / 3.0;
     const ld error = std::abs(integral - exact);
+    std::cout << std::setprecision(10) << "m2: " << m2 << std::endl;
+    if (N>=2) {
+        ld variance = m2 / (N - 1);
+        ld se = (b-a) * std::sqrt(variance / N);
+        std::cout << std::setprecision(10) << "Variance: " << variance << std::endl;
+        std::cout << std::setprecision(10) << "Standard Error: " << se << std::endl;
+        constexpr ld z95 = 1.96L;
+        ld margin = z95 * se;
+        ld lower = integral - margin;
+        ld upper = integral + margin;
+        std::cout << "CI95: [" << lower << ", " << upper << "]\n";
+    }
     std::cout << std::setprecision(10) << "Integral: " << integral << std::endl;
     std::cout << std::setprecision(10) << "Exact: " << exact << std::endl;
     std::cout << std::setprecision(10) << "Error: " << error << std::endl;
