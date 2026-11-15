@@ -40,12 +40,17 @@ int main(int argc, char** argv) {
     }    
     std::mt19937_64 rng(seed);
     std::uniform_real_distribution<ld> dist(a, b);
-    ld sum = 0.0;
-    for (int i = 0; i < N; i++) {
-        const ld x = dist(rng);
-        sum += x*x;
+    ld mean = 0.0L;
+    ld m2 = 0.0L;
+    for (int i = 0; i < N; ++i) {
+        ld x = dist(rng);
+        ld y = x * x;
+        int count = i + 1;
+        ld delta = (y - mean);
+        mean += delta/count;
+        ld delta2 = (y - mean);
+        m2 += delta * delta2;
     }
-    const ld mean = sum / N;
     const ld integral = (b - a) * mean;
     // просчет дает 8/3 с ним мы сравниваем наш результат
     const ld exact = 8.0 / 3.0;
